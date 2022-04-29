@@ -1,0 +1,116 @@
+:root {
+  --primary-color: #654de4;
+  --secondary-color: #eaeef6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Progressbar Start*/
+.progressbar {
+  width: 460px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 2rem auto 4rem;
+}
+
+.progressbar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  width: 100%;
+  background-color: var(--secondary-color);
+  z-index: -2;
+}
+
+.progress {
+  background-color: var(--primary-color);
+  width: 0%;
+}
+
+.progress-step {
+  width: 2.7rem;
+  height: 2.7rem;
+  background-color: #fff;
+  border: 1px solid var(--secondary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-step::before {
+  counter-increment: step;
+  content: attr(data-title);
+}
+
+.progress-step-active {
+  background-color: var(--primary-color);
+  color: #f3f3f3;
+}
+
+.progress-ind {
+  background: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 1px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+/* Progressbar End*/
+
+.form-wrapper {
+  width: 460px;
+  margin: 50px auto 30px;
+}
+
+.form-label {
+  font-size: 1rem;
+  font-weight: bold;
+  float: left;
+}
+
+.complete_icon {
+  margin: 80px auto 40px;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.complete_icon i {
+  font-size: 1.5rem;
+}
+
+.card-selected {
+  border: 1px solid var(--primary-color);
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  width: 460px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
