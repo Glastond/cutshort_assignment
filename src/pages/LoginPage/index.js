@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import First from "../../components/First";
-import Fourth from "../../components/Fourth";
-import Second from "../../components/Second";
-import Third from "../../components/Third";
+import { First, Fourth, Second, Third } from "../../components";
 import "./index.css";
 
 const LoginPage = () => {
@@ -43,7 +40,7 @@ const LoginPage = () => {
                   className="progress-ind"
                   style={{
                     width: `${
-                      33 * (step - 1) + 20 < 100 ? 33 * (step - 1) + 12 : 99
+                      33 * (step - 1) + 20 < 100 ? 33 * (step - 1) + 20 : 99
                     }%`,
                   }}
                 ></div>
